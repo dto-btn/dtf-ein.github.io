@@ -1,5 +1,12 @@
-{% if site.theme_settings.footer_text %}
 <footer class="site-footer">
-	<p class="text">{{ site.theme_settings.footer_text }}</p>
+	<p class="text">{{ site.data.i18n[page.lang].footer_text }}</p>
 </footer>
-{% endif %}
+<div class="fip">
+	<a href="{{ site.data.i18n[page.lang].shared_services_canada_url }}">
+		<img src="{{ site.baseurl }}/assets/img/ssc-fip.svg" class="fip" alt="{{ site.data.i18n[page.lang].shared_services_canada }}" >
+	</a>
+	<a href="https://canada.ca/{{ page.lang }}">
+		<img src="{{ site.baseurl }}/assets/img/wordmark.svg" class="wordmark" alt="Canada" >
+	</a>	
+</div>
+<div class="gradient-background"></div>

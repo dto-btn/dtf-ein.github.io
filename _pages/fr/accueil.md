@@ -4,6 +4,9 @@ title: Accueil
 lang: fr
 ref: home
 permalink: /accueil/
+callout: >
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <p>Remove all header text in <code>_config.yml</code> to disable this feature.</p>
 ---
 
 Type Theme est un thème libre et gratuit pour[Jekyll](http://jekyllrb.com/), sous licence MIT.

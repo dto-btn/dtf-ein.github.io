@@ -1,10 +1,20 @@
-en:  
+en:
+  continue_reading: Continue reading
+  footer_text: >
+    Hosted on <a href="https://github.com/SSC-CIO-DigitalTaskForce/ssc-cio-office.github.io">GitHub</a>.  <a href="https://github.com/SSC-CIO-DigitalTaskForce/ssc-cio-office.github.io/issues">Suggest a change</a>.
   home_url: home
   language: English
   meta_description: The Digital Task Force is a team working in the CIO Office of Shared Services Canada
-  meta_title: Digital Task Force  
+  meta_title: Digital Task Force
+  shared_services_canada: Shared Services Canada
+  shared_services_canada_url: https://www.canada.ca/en/shared-services.html
 fr:
+  continue_reading: Continuer à lire
+  footer_text: >
+    Hosted on <a href="https://github.com/SSC-CIO-DigitalTaskForce/ssc-cio-office.github.io">GitHub</a>.  <a href="https://github.com/SSC-CIO-DigitalTaskForce/ssc-cio-office.github.io/issues">Suggest a change or fix</a>. 
   home_url: accueil
   language: Français
   meta_description: L’équipe d’intervention numérique est une équipe qui travaille au Bureau du DPI de Services partagés Canada.
-  meta_title: L’équipe d’intervention numérique  
+  meta_title: L’équipe d’intervention numérique
+  shared_services_canada: Services partagés Canada
+  shared_services_canada_url: https://www.canada.ca/fr/services-partages.html

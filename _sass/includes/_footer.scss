@@ -1,8 +1,31 @@
 .site-footer {
-  @extend %padding-regular;
+  @extend %padding-small;
   display: inline-block;
-  text-align: center;
+  text-align: left;
   width: 100%;
-  color: lighten($text-color, 30%);
-  font-size: 0.9em;
+}
+
+
+.fip {
+  @extend %padding-small;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  img {
+    height: auto;
+
+    &.fip {
+      width: 270px;
+    }
+    &.wordmark {
+      width: 130px;
+    }
+  }
+}
+
+.gradient-background {
+  height: 10px;
+  background: linear-gradient(90deg, rgba(39,34,155,1) 0%, rgba(99,30,117,1) 100%);
 }
