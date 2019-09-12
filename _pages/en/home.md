@@ -1,8 +1,9 @@
 ---
-layout: page
-title: About
-permalink: /about/
-feature-img: "assets/img/sample_feature_img_2.png"
+layout: home
+title: Home
+lang: en
+ref: home
+permalink: /home/
 ---
 
 Type Theme is a free and open-source theme for [Jekyll](http://jekyllrb.com/), licensed under the MIT License.

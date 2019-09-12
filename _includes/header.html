@@ -1,49 +1,23 @@
 <header class="site-header">
 	<div class="branding">
-		{% if site.theme_settings.gravatar %}
-		<a href="{{ site.baseurl }}/">
-			<img class="avatar" src="https://secure.gravatar.com/avatar/{{ site.theme_settings.gravatar }}?s=100" alt=""/>
-		</a>
-		{% elsif site.theme_settings.avatar %}
-		<a href="{{ site.baseurl }}/">
-			<img class="avatar" src="{{ site.baseurl }}/{{ site.theme_settings.avatar }}" alt=""/>
-		</a>
-		{% endif %}
 		<h1 class="site-title">
-			<a href="{{ site.baseurl }}/">{{ site.theme_settings.title }}</a>
+			<a href="{{ site.baseurl }}/{{ site.data.i18n[page.lang].home_url }}">{{ site.data.i18n[page.lang].meta_title }}</a>
 		</h1>
 	</div>
 	<nav class="site-nav">
-		<ul>
-			{% if site.theme_settings.site_navigation_sort %}
-				{% assign site_pages = site.pages | sort: site.theme_settings.site_navigation_sort %}
-			{% else %}
-				{% assign site_pages = site.pages %}
-			{% endif %}
-			{% for page in site_pages %}
-			{% if page.title and page.hide != true %}
-			<li>
-				<a class="page-link" href="{{ page.url | relative_url }}">
-					{{ page.title }}
-				</a>
-			</li>
-			{% endif %}
-			{% endfor %}
-			<!-- Social icons from Font Awesome, if enabled  -->
-			{% include icons.html %}
 
-            <!-- Search bar -->
-            {% if site.theme_settings.search %}
-            <li>
-            <form action="{{ site.baseurl }}/search.html" method="get">
-                <input type="text" id="search-box" name="query" placeholder="Search" class="">
-                <button type="submit" class="">
-                    <i class="fa fa-fw fa-search"></i>
-                </button>
-            </form>
-            </li>
-            {% endif %}
+		<ul>
+		{% assign posts = site.posts | where:"ref", page.ref | sort: 'lang' %}
+		{% assign pages = site.pages | where:"ref", page.ref | sort: 'lang' %}
+		{% assign all_content = posts | concat: pages %}
+		{% for content in all_content %}
+			{% if content.lang != page.lang %}
+				<li><a class="page-link" lang="{{ content.lang }}" hreflang="{{ content.lang }}" href="{{ content.url | prepend: site.baseurl }}">{{ site.data.i18n[content.lang].language }}</a></li>
+				{% break %}
+			{% endif %}
+		{% endfor %}  
 		</ul>
+
 	</nav>
 
 </header>
