@@ -3,10 +3,10 @@ layout: default
 ---
 
 <div class="home">
-  {% if site.theme_settings.header_text %}
+  {% if page.callout %}
   <div class="call-out"
   style="background-image: url('{{ site.baseurl }}/{{ site.theme_settings.header_text_feature_image }}')">
-    {{ site.theme_settings.header_text }}
+    {{ page.callout }}
   </div>
   {% endif %}
 
@@ -31,7 +31,7 @@ layout: default
         <div class="excerpt">
           {{ post.excerpt }}
           <a class="button" href="{{ post.url | relative_url }}">
-            {{ site.theme_settings.str_continue_reading }}
+            {{ site.data.i18n[page.lang].continue_reading }}
           </a>
         </div>
       </div>

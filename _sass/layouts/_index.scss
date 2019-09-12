@@ -8,6 +8,7 @@
   font-size: 1.2em;
   text-align: center;
   color: $header-desc-text-color;
+  border-bottom: 1px solid $border-color;
 }
 .call-out p:last-child {
   margin-bottom: 0;
