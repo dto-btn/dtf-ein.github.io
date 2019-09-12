@@ -91,11 +91,6 @@ p, ol, ul, dl, .math-display {
   line-height: 1.5;
   margin-bottom: 1em;
 }
-// KaTeX math display
-.math-display {
-  display: inline-block;
-  width: 100%;
-}
 // Lists within lists
 li > ul, li > ol {
     margin-bottom: 0;
