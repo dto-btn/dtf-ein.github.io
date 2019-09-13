@@ -43,3 +43,32 @@ a.button {
 .disabled {
   opacity: 0.7;
 }
+
+.font-xl {
+  font-size: $font-size * 1.5 !important;
+}
+
+.font-lg {
+  font-size: $font-size * 1.2 !important;
+}
+
+.font-md {
+  font-size: $font-size !important;
+}
+
+.font-sm {
+  font-size: $font-size * 0.8 !important;
+}
+
+/* Hidden content, but available to screen readers */ 
+.inv {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
