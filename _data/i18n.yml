@@ -1,8 +1,8 @@
 en:
   continue_reading: Continue reading
   footer_text: >
-    <p>Hosted on <a href="https://github.com/SSC-CIO-DigitalTaskForce/ssc-cio-office.github.io">GitHub</a>.</p>
-    <p><a href="https://github.com/SSC-CIO-DigitalTaskForce/ssc-cio-office.github.io/issues">Help us improve</a>.</p>
+    <p>Hosted on <a href="https://github.com/dtf-ein/dtf-ein.github.io">GitHub</a>.</p>
+    <p><a href="https://github.com/dtf-ein/dtf-ein.github.io/issues">Help us improve</a>.</p>
   home_url: home
   language: English
   meta_description: The Digital Task Force is a team working in the CIO Office of Shared Services Canada
@@ -12,8 +12,8 @@ en:
 fr:
   continue_reading: Continuer à lire
   footer_text: >
-    <p>Hébergé sur <a href="https://github.com/SSC-CIO-DigitalTaskForce/ssc-cio-office.github.io">GitHub</a>.</p>
-    <p><a href="https://github.com/SSC-CIO-DigitalTaskForce/ssc-cio-office.github.io/issues">Aidez-nous à améliorer</a>. </p>
+    <p>Hébergé sur <a href="https://github.com/dtf-ein/dtf-ein.github.io">GitHub</a>.</p>
+    <p><a href="https://github.com/dtf-ein/dtf-ein.github.io/issues">Aidez-nous à améliorer</a>. </p>
   home_url: accueil
   language: Français
   meta_description: L’équipe d’intervention numérique est une équipe qui travaille au Bureau du DPI de Services partagés Canada.
