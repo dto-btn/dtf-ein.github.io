@@ -1,8 +1,7 @@
 ---
 layout: splash
 ref: splash
+lang: en
 permalink: /
+hideSiteFooter: true
 ---
-
-* [{{ site.data.i18n.en.language }}](/home)
-* [{{ site.data.i18n.fr.language }}](/accueil)

@@ -1,3 +1,50 @@
+.splash {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  img {
+    width: 200px;
+    height: auto;
+    @media (max-width: 576px) {
+      width: 150px;
+    }
+  }
+
+  main {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+
+    h1 {
+      font-size: 1.5em;
+      display: inline-flex;
+      flex-direction: column;
+      @media (max-width: 576px) {
+        font-size: 1.2em;
+      }      
+
+      [lang='en']:after {
+        content: '';
+        display: block;
+        width: 70%;
+        height: 1px;
+        background: $border-color;
+        margin: .5em auto;
+      }
+    }
+
+    .list-inline {
+      width: 100%;
+    }
+  }
+
+  footer {
+    width: 100%;
+  }
+}
+
 // Header text feature
 .call-out {
   @extend %padding-regular;
