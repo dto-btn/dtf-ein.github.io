@@ -26,6 +26,9 @@ footer {
       }
       &.wordmark {
         width: 130px;
+        @media (max-width: 576px) {
+          display: none;
+        }
       }
     }
   }
@@ -37,3 +40,4 @@ footer {
     background: linear-gradient(90deg, rgba(39,34,155,1) 0%, rgba(99,30,117,1) 100%);  
   }  
 }
+

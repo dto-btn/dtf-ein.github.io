@@ -1,7 +1,9 @@
 <footer>
+	{% if page.hideSiteFooter != true  %}
 	<div class="site-footer">
 		{{ site.data.i18n[page.lang].footer_text }}
 	</div>
+	{% endif %}
 
 	<div class="fip-bar">
 		<a href="{{ site.data.i18n[page.lang].shared_services_canada_url }}">
