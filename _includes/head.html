@@ -12,23 +12,9 @@
 	<meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.data.i18n[page.lang].meta_description }}{% endif %}">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<!-- CSS -->
 	<link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
-
-	<!--Favicon-->
+	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic">
 	<link rel="icon" href="{{ site.baseurl }}/assets/img/favicon.png" type="image/png">
-
-	<!-- Canonical -->
 	<link rel="canonical" href="{{ page.url | replace:'index.html','' | relative_url }}">
-
-	<!-- Font Awesome -->
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-		integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-
-	<!-- Google Fonts -->
-	{% if site.theme_settings.google_fonts %}
-	<link href="//fonts.googleapis.com/css?family={{ site.theme_settings.google_fonts }}" rel="stylesheet"
-		type="text/css">
-	{% endif %}
-
+	
 </head>
