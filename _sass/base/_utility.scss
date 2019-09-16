@@ -2,7 +2,7 @@
 %padding-small {
   padding: $padding-x-small $padding-x-small * 2;
   @media (max-width: 1000px) {
-    padding: $padding-x-small $padding-x-small;
+    padding: $padding-small * 2 $padding-small;
   }
 }
 %padding-regular {
@@ -11,7 +11,7 @@
     padding: $padding-small * 1.5 $padding-large / 1.6;
   }
   @media (max-width: 576px) {
-    padding: $padding-small;
+    padding: $padding-small * 1.5 $padding-small * 2;
   }
 }
 // Buttons
@@ -22,7 +22,7 @@
   margin: 1em .25em;
 
   color: $link-color;
-  background: rgba(0,0,0,.03);
+  background: rgba(0,0,0,.05);
   
   &:after {
     content: '';
@@ -35,8 +35,11 @@
     transition: all .2s;
   }
 
-  &:hover:after {
-    height: 5px;  
+  &:hover {
+    background: rgba(0,0,0,.06);
+    &:after {
+      height: 5px;  
+    }
   }
 }
 
@@ -52,19 +55,31 @@
 }
 
 .font-xl {
-  font-size: $font-size * 1.5 !important;
+  font-size: 1.8em !important;
 }
 
 .font-lg {
-  font-size: $font-size * 1.2 !important;
+  font-size: 1.4em !important;
 }
 
 .font-md {
-  font-size: $font-size !important;
+  font-size: 1em !important;
 }
 
 .font-sm {
-  font-size: $font-size * 0.8 !important;
+  font-size: 0.8em !important;
+}
+
+.margin-bottom-lg {
+  margin-bottom: 1.5em !important;
+}
+
+.margin-bottom-md {
+  margin-bottom: 1em !important;
+}
+
+.margin-bottom-sm {
+  margin-bottom: .5em !important;
 }
 
 .list-inline {
