@@ -3,7 +3,7 @@
 		<h1 class="site-title">
 			<a href="{{ site.baseurl }}/{{ site.data.i18n[page.lang].home_url }}">
 				<img src="{{ site.baseurl }}/assets/img/dtf-logo.svg" alt="" >
-				{{ site.data.i18n[page.lang].meta_title }}
+				{{ site.data.i18n[page.lang].meta_title | default: site.data.i18n.en.meta_title }}
 			</a>
 		</h1>
 	</div>
@@ -15,7 +15,7 @@
 			{% assign pages = site.pages | where:"ref", page.ref | sort: 'lang' %}
 			{% assign all_content = posts | concat: pages %}
 			{% for content in all_content %}
-				{% if content.lang != page.lang %}
+				{% if page.lang and content.lang != page.lang %}
 					<li><a class="page-link" lang="{{ content.lang }}" hreflang="{{ content.lang }}" href="{{ content.url | prepend: site.baseurl }}">{{ site.data.i18n[content.lang].language }}</a></li>
 					{% break %}
 				{% endif %}
