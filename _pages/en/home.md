@@ -6,7 +6,7 @@ ref: home
 permalink: /home/
 callout: >
     <h1 class="inv">Digital Task Force</h1>
-    <p class="font-xl">We are a small team working with the CIO of Shared Services Canada.</p>
+    <p class="font-xl margin-bottom-sm">We are a small team working with the CIO of Shared Services Canada.</p>
     <p><a href="https://github.com/orgs/dtf-ein/projects/1" class="button">Follow our work</a></p>
 ---
 
