@@ -1,13 +1,13 @@
 <footer>
-	{% if page.hide != true  %}
+	{% if page.hide != true and page.lang  %}
 	<div class="site-footer">
 		{{ site.data.i18n[page.lang].footer_text }}
 	</div>
 	{% endif %}
 
 	<div class="fip-bar">
-		<a href="{{ site.data.i18n[page.lang].shared_services_canada_url }}">
-			<img src="{{ site.baseurl }}/assets/img/ssc-fip.svg" class="fip" alt="{{ site.data.i18n[page.lang].shared_services_canada }}" >
+		<a href="{{ site.data.i18n[page.lang].shared_services_canada_url | default: site.data.i18n.en.shared_services_canada_url }}">
+			<img src="{{ site.baseurl }}/assets/img/ssc-fip-{{ page.lang | default: 'en' }}.svg" class="fip" alt="{{ site.data.i18n[page.lang].shared_services_canada | default: site.data.i18n.en.shared_services_canada }}" >
 		</a>
 		<a href="https://canada.ca/{{ page.lang }}">
 			<img src="{{ site.baseurl }}/assets/img/wordmark.svg" class="wordmark" alt="Canada" >

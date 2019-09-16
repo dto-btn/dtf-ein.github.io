@@ -9,7 +9,7 @@
 			{{ site.data.i18n.en.meta_title }} - {{ site.data.i18n.fr.meta_title }}
 		{% endif %}
 	</title>
-	<meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.data.i18n[page.lang].meta_description }}{% endif %}">
+	<meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.data.i18n[page.lang].meta_description | default: site.data.i18n.en.meta_description }}{% endif %}">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
