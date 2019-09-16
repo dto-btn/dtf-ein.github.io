@@ -7,6 +7,7 @@ en:
   language: English
   meta_description: The Digital Task Force is a team working in the CIO Office of Shared Services Canada
   meta_title: Digital Task Force
+  meta_title_acronym: DTF
   shared_services_canada: Shared Services Canada
   shared_services_canada_url: https://www.canada.ca/en/shared-services.html
 fr:
@@ -18,5 +19,6 @@ fr:
   language: Français
   meta_description: L’Équipe d’intervention numérique est une équipe qui travaille au Bureau du DPI de Services partagés Canada.
   meta_title: L’Équipe d’intervention numérique
+  meta_title_acronym: EIN
   shared_services_canada: Services partagés Canada
   shared_services_canada_url: https://www.canada.ca/fr/services-partages.html
