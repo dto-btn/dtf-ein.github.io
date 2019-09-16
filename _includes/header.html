@@ -3,7 +3,12 @@
 		<h1 class="site-title">
 			<a href="{{ site.baseurl }}/{{ site.data.i18n[page.lang].home_url }}">
 				<img src="{{ site.baseurl }}/assets/img/dtf-logo.svg" alt="" >
-				{{ site.data.i18n[page.lang].meta_title | default: site.data.i18n.en.meta_title }}
+				<span class="hide-mobile">
+					{{ site.data.i18n[page.lang].meta_title | default: site.data.i18n.en.meta_title }}
+				</span>
+				<span class="show-mobile">
+					<span class="inv">{{ site.data.i18n[page.lang].meta_title | default: site.data.i18n.en.meta_title }} - </span>{{ site.data.i18n[page.lang].meta_title_acronym | default: site.data.i18n.en.meta_title_acronym }}
+				</span>				
 			</a>
 		</h1>
 	</div>
