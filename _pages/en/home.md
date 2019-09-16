@@ -31,3 +31,8 @@ Specific and well scoped challenges tackled in a set time period, in partnership
 - Clear partnership agreements
 - Aim for no hand-offs
 - Trust and collaboration
+
+## Get in touch
+- Email: [brittany.hurley@canada.ca](brittany.hurley@canada.ca)
+- In person: [360 Lisgar St., 8th Floor](https://goo.gl/maps/EGtbR8EMoDMkbCdh8)
+
