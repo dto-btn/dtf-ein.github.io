@@ -9,6 +9,7 @@ sass:
   style: :compressed
 include: ['_pages']
 exclude:
+  - .circleci
   - Gemfile
   - Gemfile.lock
   - LICENSE
