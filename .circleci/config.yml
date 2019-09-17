@@ -31,6 +31,6 @@ workflows:
   build-test:
     jobs:
       - build
-      - test_html
+      - test_html:
           requires:
             - build   
