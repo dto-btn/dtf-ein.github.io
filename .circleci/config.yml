@@ -5,11 +5,9 @@ jobs:
   # Checkout and build the site
   build:
     docker:
-      - image: jekyll/jekyll:$JEKYLL_VERSION
+      - image: jekyll/builder:$JEKYLL_VERSION
     steps:
       - checkout
-      - run: touch Gemfile.lock
-      - run: chmod a+w Gemfile.lock
       - run: bundle install
       - run: jekyll build
       - save_cache:
