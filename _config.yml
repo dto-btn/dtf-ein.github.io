@@ -14,3 +14,4 @@ exclude:
   - Gemfile.lock
   - LICENSE
   - README.md
+  - vendor

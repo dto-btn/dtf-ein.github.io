@@ -32,5 +32,5 @@ Des défis spécifiques et bien définis, abordés dans un laps de temps déterm
 - Confiance et collaboration
 
 ## Contactez-nous
-- Courriel : [brittany.hurley@canada.ca](brittany.hurley@canada.ca)
+- Courriel : [brittany.hurley@canada.ca](mailto:brittany.hurley@canada.ca)
 - En personne : [360 rue Lisgar, 8e étage](https://goo.gl/maps/EGtbR8EMoDMkbCdh8)
