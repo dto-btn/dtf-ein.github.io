@@ -3,7 +3,7 @@ version: 2.1
 jobs:
 
   # Checkout and build the site
-  checkout_code:
+  build:
     docker:
       - image: jekyll/jekyll:$JEKYLL_VERSION
     working_directory: ~/dtf-ein
