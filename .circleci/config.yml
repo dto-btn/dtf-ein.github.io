@@ -26,19 +26,6 @@ jobs:
           key: site-{{ .Environment.CIRCLE_SHA1 }}      
       - run: htmlproofer ~/dtf-ein/_site --empty-alt-ignore
 
-  # Runs Cucumber.js feature tests using Puppeteer
-  test_feature:
-    docker:
-      - image: patheard/node-puppeteer:latest
-    working_directory: ~/dtf-ein
-    steps:
-      - restore_cache:
-          key: site-{{ .Environment.CIRCLE_SHA1 }}      
-      - run: npm install
-      - run: npm start &
-      - run: wget --retry-connrefused --tries 30 --waitretry 3 -qO- http://localhost:4000 &> /dev/null # Wait until the website is up before continuing
-      - run: npm test
-
 workflows:
   version: 2.1
   build-test:
@@ -46,7 +33,4 @@ workflows:
       - build
       - test_html
         requires:
-          - build
-      - test_accessibility
-        requires:
-          - build      
+          - build   
