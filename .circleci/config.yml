@@ -9,6 +9,8 @@ jobs:
     working_directory: ~/dtf-ein
     steps:
       - checkout
+      - run: pwd      
+      - run: ls -l
       - run: bundle
       - run: jekyll build --destination ~/dtf-ein/_site
       - save_cache:
