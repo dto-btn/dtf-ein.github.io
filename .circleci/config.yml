@@ -8,7 +8,8 @@ jobs:
       - image: jekyll/jekyll:$JEKYLL_VERSION
     steps:
       - checkout
-      - run: bundle install --deployment
+      - run: ls -l $CIRCLE_WORKING_DIRECTORY/Gemfile
+      - run: bundle install --deployment --gemfile $CIRCLE_WORKING_DIRECTORY/Gemfile
       - run: jekyll build
       - save_cache:
           key: site-{{ .Environment.CIRCLE_SHA1 }}
