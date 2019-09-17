@@ -9,7 +9,9 @@ jobs:
     working_directory: /tmp/dtf
     steps:
       - checkout
-      - run: chown -R $USER:$USER $CIRCLE_WORKING_DIRECTORY
+      - run: echo $USER
+      - run: whoami
+      - run: chown -R $(whoami):$(whoami) $CIRCLE_WORKING_DIRECTORY
       - run: bundle install
       - run: jekyll build
       - save_cache:
