@@ -5,10 +5,19 @@ jobs:
   # Checkout and build the site
   build:
     docker:
-      - image: jekyll/builder:$JEKYLL_VERSION
+      - image: jekyll/jekyll:$JEKYLL_VERSION
     steps:
       - checkout
-      - run: bundle install
+      - run:
+        name: Update perms of Gemfile.lock
+        command: |
+          ls -l
+          rm Gemfile.lock
+          touch Gemfile.lock
+          chmod a+w Gemfile.lock
+          ls -l
+
+      - run: bundle install 
       - run: jekyll build
       - save_cache:
           key: site-{{ .Environment.CIRCLE_SHA1 }}
@@ -22,7 +31,7 @@ jobs:
     steps:
       - restore_cache:
           key: site-{{ .Environment.CIRCLE_SHA1 }}      
-      - run: htmlproofer ~/project_site --empty-alt-ignore
+      - run: htmlproofer ~/project/_site --empty-alt-ignore
 
 workflows:
   version: 2.1
