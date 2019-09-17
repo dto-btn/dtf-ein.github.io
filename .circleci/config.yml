@@ -9,8 +9,11 @@ jobs:
     working_directory: ~/dtf-ein
     steps:
       - checkout
-      - run: sudo bundle install
-      - run: jekyll build --destination ~/dtf-ein/_site
+      - run: 
+          command: |
+            ls -l
+            bundle install
+            jekyll build --destination ~/dtf-ein/_site
       - save_cache:
           key: site-{{ .Environment.CIRCLE_SHA1 }}
           paths:
