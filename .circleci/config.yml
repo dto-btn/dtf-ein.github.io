@@ -8,7 +8,7 @@ jobs:
       - image: jekyll/jekyll:$JEKYLL_VERSION
     steps:
       - checkout
-      - run: ls -l $CIRCLE_WORKING_DIRECTORY/Gemfile
+      - run: ls -l $CIRCLE_WORKING_DIRECTORY
       - run: bundle install --deployment --gemfile $CIRCLE_WORKING_DIRECTORY/Gemfile
       - run: jekyll build
       - save_cache:
