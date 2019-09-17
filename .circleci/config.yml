@@ -9,9 +9,15 @@ jobs:
     working_directory: /tmp/dtf
     steps:
       - checkout
-      - run: chmod a+w $CIRCLE_WORKING_DIRECTORY
-      - run: bundle install --deployment
-      - run: jekyll build
+      - run: 
+          name: Allow write access for docker image's `jekyll` user
+          command: chmod a+w $CIRCLE_WORKING_DIRECTORY
+      - run: 
+          name: Install gems
+          command: bundle install --deployment
+      - run: 
+          name: Build the site files
+          command: jekyll build
       - save_cache:
           key: site-{{ .Environment.CIRCLE_SHA1 }}
           paths:
@@ -25,7 +31,9 @@ jobs:
     steps:
       - restore_cache:
           key: site-{{ .Environment.CIRCLE_SHA1 }}      
-      - run: htmlproofer $CIRCLE_WORKING_DIRECTORY/_site --empty-alt-ignore
+      - run: 
+          name: Test generated file with htmlproofer
+          command: htmlproofer $CIRCLE_WORKING_DIRECTORY/_site --empty-alt-ignore --check-html --only-4xx
 
 workflows:
   version: 2.1
