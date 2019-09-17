@@ -11,6 +11,7 @@ jobs:
       - checkout
       - run: chown -R $(whoami):$(whoami) $CIRCLE_WORKING_DIRECTORY
       - run: chmod u+w $CIRCLE_WORKING_DIRECTORY
+      - run: rm Gemfile.lock
       - run: bundle install
       - run: jekyll build
       - save_cache:
