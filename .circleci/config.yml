@@ -9,7 +9,8 @@ jobs:
     working_directory: /tmp/dtf
     steps:
       - checkout
-      - run: bundle install --frozen
+      - run: chmod a+w $CIRCLE_WORKING_DIRECTORY
+      - run: bundle install --deployment
       - run: jekyll build
       - save_cache:
           key: site-{{ .Environment.CIRCLE_SHA1 }}
