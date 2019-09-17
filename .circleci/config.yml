@@ -9,13 +9,13 @@ jobs:
     steps:
       - checkout
       - run:
-        name: Update perms of Gemfile.lock
-        command: |
-          ls -l
-          rm Gemfile.lock
-          touch Gemfile.lock
-          chmod a+w Gemfile.lock
-          ls -l
+          name: Update perms of Gemfile.lock
+          command: |
+            ls -l
+            rm Gemfile.lock
+            touch Gemfile.lock
+            chmod a+w Gemfile.lock
+            ls -l
 
       - run: bundle install 
       - run: jekyll build
