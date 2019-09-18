@@ -55,28 +55,22 @@ jobs:
             - site-{{ .Environment.CIRCLE_SHA1 }}
       - restore_cache:
           keys:
-            - node-{{ checksum "package-lock.json" }}
-      - restore_cache:
-          keys:
-            - cypress-{{ checksum "package-lock.json" }}                                       
+            - node-cy-{{ checksum "package-lock.json" }}                                    
       - run: 
           name: Install dependencies
           command: npm i
       - save_cache:
-          key: node-{{ checksum "package-lock.json" }}
+          key: node-cy-{{ checksum "package-lock.json" }}
           paths:
             - /tmp/dtf/node_modules
-      - save_cache:
-          key: cypress-{{ checksum "package-lock.json" }}
-          paths:
-            - /root/.cache/Cypress              
+            - /root/.cache/Cypress           
 
       - run:
-          name: Start local server
-          command: npm run server:start &
-      - run:
-          name: Start the Cypress tests
-          command: npm run cypress:run
+          name: Start local server and run Cypress tests
+          command: | 
+            npm run server:start &
+            wget --retry-connrefused --tries 30 --waitretry 3 -qO- http://localhost:8080 &> /dev/null # Wait until the website is up before continuing
+            npm run cypress:run
 
 workflows:
   version: 2
