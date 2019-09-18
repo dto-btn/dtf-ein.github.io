@@ -1,3 +1,5 @@
+[![circleci](https://img.shields.io/circleci/project/github/dtf-ein/dtf-ein.github.io.svg)](https://circleci.com/gh/dtf-ein/dtf-ein.github.io/)
+
 # Digital Task Force website
 [Website for our team](https://dtf-ein.github.io/), working with the CIO of Shared Services Canada.
 
