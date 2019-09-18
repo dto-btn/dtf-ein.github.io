@@ -12,9 +12,18 @@ jobs:
       - run: 
           name: Allow write access for docker image's `jekyll` user
           command: chmod a+w $CIRCLE_WORKING_DIRECTORY
+
+      - restore_cache:
+          keys: 
+            - gems-{{ checksum "Gemfile.lock" }}
       - run: 
           name: Install gems
           command: bundle install --deployment
+      - save_cache:
+          key: gems-{{ checksum "Gemfile.lock" }}
+          paths:
+            - /tmp/dtf/vendor/bundle
+
       - run: 
           name: Build the site files
           command: jekyll build
@@ -35,6 +44,34 @@ jobs:
           name: Test generated file with htmlproofer
           command: htmlproofer $CIRCLE_WORKING_DIRECTORY/_site --empty-alt-ignore --check-html --only-4xx
 
+  # Run Cypress functional tests
+  test_function:
+    docker:
+      - image: cypress/base:latest
+    working_directory: /tmp/dtf
+    steps:
+      - restore_cache:
+          keys:
+            - site-{{ .Environment.CIRCLE_SHA1 }}
+      - restore_cache:
+          keys:
+            - node-cy-{{ checksum "package-lock.json" }}                                    
+      - run: 
+          name: Install dependencies
+          command: npm i
+      - save_cache:
+          key: node-cy-{{ checksum "package-lock.json" }}
+          paths:
+            - /tmp/dtf/node_modules
+            - /root/.cache/Cypress           
+
+      - run:
+          name: Start local server and run Cypress tests
+          command: | 
+            npm run server:start &
+            wget --retry-connrefused --tries 30 --waitretry 3 -qO- http://localhost:8080 &> /dev/null # Wait until the website is up before continuing
+            npm run cypress:run
+
 workflows:
   version: 2
   build-test:
@@ -42,4 +79,7 @@ workflows:
       - build
       - test_html:
           requires:
-            - build   
+            - build
+      - test_function:
+          requires:
+            - build                
