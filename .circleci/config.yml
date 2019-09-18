@@ -64,7 +64,10 @@ jobs:
 
       - run:
           name: Start local server
-          command: npm run server:start & wait-on http://localhost:8080
+          command: npm run server:start &
+      - run:
+          name: Wait for the server to start
+          command: wget --retry-connrefused --tries 30 --waitretry 3 -qO- http://localhost:8080 &> /dev/null
       - run:
           name: Start the Cypress tests
           command: npm cypress:run
