@@ -1,4 +1,4 @@
-version: 2.1
+version: 2
 
 jobs:
 
@@ -36,7 +36,7 @@ jobs:
           command: htmlproofer $CIRCLE_WORKING_DIRECTORY/_site --empty-alt-ignore --check-html --only-4xx
 
 workflows:
-  version: 2.1
+  version: 2
   build-test:
     jobs:
       - build

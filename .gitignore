@@ -1,6 +1,8 @@
 *.DS_Store
 *.gem
+*.log
 .bundle
 .jekyll-metadata
 .sass-cache
+.vagrant
 _site
