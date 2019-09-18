@@ -7,6 +7,9 @@
 .sass-cache
 .vagrant
 
+cypress/fixtures
+cypress/plugins
+cypress/support
 cypress/videos
 node_modules
 _site
