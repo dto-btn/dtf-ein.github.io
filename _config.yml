@@ -7,11 +7,14 @@ highlighter: rouge
 sass:
   sass_dir: _sass
   style: :compressed
-include: ['_pages']
+include: 
+  - _pages
 exclude:
   - .circleci
-  - Gemfile
-  - Gemfile.lock
+  - cypress  
+  - Gemfile*
   - LICENSE
+  - node_modules
+  - package*.json
   - README.md
   - vendor
