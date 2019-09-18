@@ -19,15 +19,16 @@ Vagrant.configure("2") do |config|
     vb.name = 'trusty-dev'
     vb.memory = 4096
     vb.cpus = 1
-	vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+	  vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
     vb.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
   end
   
-  # Install git
+  # Upgrade, install git and the CircleCI CLI
   config.vm.provision "shell", inline: <<-SHELL
     apt-get update
-	apt-get install --install-recommends linux-generic-lts-xenial
-	apt-get install -y git
+    apt full-upgrade -y
+	  apt-get install -y git
+    curl -fLSs https://circle.ci/cli | bash
   SHELL
   
   # Install Docker
