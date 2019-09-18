@@ -52,8 +52,10 @@ jobs:
     steps:
       - restore_cache:
           keys:
-            - site-{{ .Environment.CIRCLE_SHA1 }} 
-            - node-{{ checksum "package-lock.json" }}               
+            - site-{{ .Environment.CIRCLE_SHA1 }}
+      - restore_cache:
+          keys:
+            - node-{{ checksum "package-lock.json" }}                           
       - run: 
           name: Install dependencies
           command: npm i
@@ -67,7 +69,7 @@ jobs:
           command: npm run server:start &
       - run:
           name: Start the Cypress tests
-          command: npm cypress:run
+          command: npm run cypress:run
 
 workflows:
   version: 2
