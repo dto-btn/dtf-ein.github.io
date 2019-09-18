@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Automated tests for the Digital Task Force website",
   "scripts": {
-    "start": "",
+    "start": "cypress run --env host=http://localhost:8080",
     "cypress:open": "cypress open --env host=http://localhost:8080",
     "server:start": "static _site"
   },
@@ -24,6 +24,6 @@
   "homepage": "https://dtf-ein.github.io/",
   "devDependencies": {
     "cypress": "^3.4.1",
-    "serve-static": "^1.14.1"
+    "node-static": "^0.7.11"
   }
 }
