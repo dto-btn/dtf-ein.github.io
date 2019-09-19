@@ -10,7 +10,7 @@
 cypress/fixtures
 cypress/plugins
 cypress/screenshots
-cypress/support
+cypress/support/commands.js
 cypress/videos
 node_modules
 _site
