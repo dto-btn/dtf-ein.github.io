@@ -1,7 +1,10 @@
 describe('Test the home page', function() {
 
-    it('loads the splash page with expected links', function() {
+    it('loads the home page with expected links', function() {
         cy.visit(`${Cypress.env('host')}/home`);
+
+        cy.injectAxe();
+        cy.checkA11y();   
 
         cy.get('title').should('contain', 'Home - Digital Task Force');
         cy.get('.call-out .button').should('have.attr', 'href').and('eq', 'https://github.com/orgs/dtf-ein/projects/1');
@@ -13,6 +16,9 @@ describe('Test the home page', function() {
 
     it('changes language to French and has expected links', function() {
         cy.get('.site-nav a[lang="fr"]').click();
+
+        cy.injectAxe();
+        cy.checkA11y();  
 
         cy.url().should('eq', `${Cypress.env('host')}/accueil/`);
         cy.get('html').should('have.attr', 'lang').and('eq', 'fr');

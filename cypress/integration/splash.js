@@ -4,6 +4,9 @@ describe('Test the splash page', function() {
         cy.visit(Cypress.env('host'));
         cy.screenshot();
 
+        cy.injectAxe();
+        cy.checkA11y();  
+
         cy.get('title').should('contain', 'Digital Task Force - L’Équipe d’intervention numérique');
     });
 
