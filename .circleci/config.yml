@@ -70,7 +70,7 @@ jobs:
           command: | 
             npm run server:start &
             wget --retry-connrefused --tries 30 --waitretry 3 -qO- http://localhost:8080 &> /dev/null # Wait until the website is up before continuing
-            npm run cypress:run
+            npm run cypress:ci
 
 workflows:
   version: 2
