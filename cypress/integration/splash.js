@@ -2,6 +2,7 @@ describe('Test the splash page', function() {
 
     it('loads the splash page', function() {
         cy.visit(Cypress.env('host'));
+        cy.screenshot();
 
         cy.get('title').should('contain', 'Digital Task Force - L’Équipe d’intervention numérique');
     });
@@ -9,6 +10,7 @@ describe('Test the splash page', function() {
     it('visits the English home page', function() {
         cy.visit(Cypress.env('host'));
         cy.get('main .list-inline a[lang="en"]').click();
+        cy.screenshot();
 
         cy.url().should('eq', `${Cypress.env('host')}/home/`);
         cy.get('html').should('have.attr', 'lang').and('eq', 'en');           
@@ -18,6 +20,7 @@ describe('Test the splash page', function() {
     it('visits the French home page', function() {
         cy.visit(Cypress.env('host'));
         cy.get('main .list-inline a[lang="fr"]').click();
+        cy.screenshot();
 
         cy.url().should('eq', `${Cypress.env('host')}/accueil/`);
         cy.get('html').should('have.attr', 'lang').and('eq', 'fr');
