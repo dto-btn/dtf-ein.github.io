@@ -47,7 +47,7 @@ jobs:
   # Run Cypress functional tests
   test_function:
     docker:
-      - image: cypress/browsers:node12.4.0-chrome76
+      - image: cypress/base:latest
     working_directory: /tmp/dtf
     steps:
       - restore_cache:
