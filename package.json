@@ -5,7 +5,7 @@
   "scripts": {
     "cypress:open": "cypress open --env host=http://localhost:8080",
     "cypress:run": "cypress run --env host=http://localhost:8080",
-    "cypress:ci": "cypress run --record --env host=http://localhost:8080",
+    "cypress:ci": "cypress run --env host=http://localhost:8080 --record --group functional-tests --browser chrome",
     "server:start": "static _site"
   },
   "repository": {
