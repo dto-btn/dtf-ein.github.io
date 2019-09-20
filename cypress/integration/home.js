@@ -34,7 +34,6 @@ describe('Test the home page', function() {
     it('matches the reference snapshot on desktop in French', () => {
         cy.visit(`${Cypress.env('host')}/accueil`)
             .then(() => {
-                cy.document()
                 cy.get('header').toMatchImageSnapshot();
                 cy.get('footer').toMatchImageSnapshot();
             });
