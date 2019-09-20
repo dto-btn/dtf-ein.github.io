@@ -18,6 +18,7 @@ describe('Test the home page', function() {
         cy.visit(`${Cypress.env('host')}/home`)
             .then(() => {
                 cy.get('header').toMatchImageSnapshot();
+                cy.wait(500);
                 cy.get('footer').toMatchImageSnapshot();
             });
     });
@@ -27,6 +28,7 @@ describe('Test the home page', function() {
         cy.visit(`${Cypress.env('host')}/home`)
             .then(() => {
                 cy.get('header').toMatchImageSnapshot();
+                cy.wait(500);
                 cy.get('footer').toMatchImageSnapshot();
             });
     });
@@ -35,6 +37,7 @@ describe('Test the home page', function() {
         cy.visit(`${Cypress.env('host')}/accueil`)
             .then(() => {
                 cy.get('header').toMatchImageSnapshot();
+                cy.wait(500);
                 cy.get('footer').toMatchImageSnapshot();
             });
     });
@@ -44,6 +47,7 @@ describe('Test the home page', function() {
         cy.visit(`${Cypress.env('host')}/accueil`)
             .then(() => {
                 cy.get('header').toMatchImageSnapshot();
+                cy.wait(500);
                 cy.get('footer').toMatchImageSnapshot();
             });
     });    
