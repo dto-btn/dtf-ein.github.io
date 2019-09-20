@@ -8,9 +8,9 @@
 .vagrant
 
 cypress/fixtures
-cypress/plugins
 cypress/screenshots
 cypress/support/commands.js
 cypress/videos
+cypress/**/*.diff.png
 node_modules
 _site
