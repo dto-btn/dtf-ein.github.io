@@ -14,7 +14,43 @@ describe('Test the home page', function() {
         cy.get('.fip-bar a:nth-child(2)').should('have.attr', 'href').and('eq', 'https://canada.ca/en');           
     });
 
+    it('matches the reference snapshot on desktop in English', () => {
+        cy.visit(`${Cypress.env('host')}/home`)
+            .then(() => {
+                cy.get('header').toMatchImageSnapshot();
+                cy.get('footer').toMatchImageSnapshot();
+            });
+    });
+    
+    it('matches the reference snapshot on mobile devices in English', () => {
+        cy.viewport('iphone-6');
+        cy.visit(`${Cypress.env('host')}/home`)
+            .then(() => {
+                cy.get('header').toMatchImageSnapshot();
+                cy.get('footer').toMatchImageSnapshot();
+            });
+    });
+    
+    it('matches the reference snapshot on desktop in French', () => {
+        cy.visit(`${Cypress.env('host')}/accueil`)
+            .then(() => {
+                cy.document()
+                cy.get('header').toMatchImageSnapshot();
+                cy.get('footer').toMatchImageSnapshot();
+            });
+    });
+    
+    it('matches the reference snapshot on mobile devices in French', () => {
+        cy.viewport('iphone-6');
+        cy.visit(`${Cypress.env('host')}/accueil`)
+            .then(() => {
+                cy.get('header').toMatchImageSnapshot();
+                cy.get('footer').toMatchImageSnapshot();
+            });
+    });    
+
     it('changes language to French and has expected links', function() {
+        cy.visit(`${Cypress.env('host')}/home`);
         cy.get('.site-nav a[lang="fr"]').click();
 
         cy.injectAxe();
@@ -30,7 +66,8 @@ describe('Test the home page', function() {
         cy.get('.fip-bar a:nth-child(2)').should('have.attr', 'href').and('eq', 'https://canada.ca/fr');              
     });
     
-    it('changes language back to English', function() {
+    it('changes language to English from French', function() {
+        cy.visit(`${Cypress.env('host')}/accueil`);
         cy.get('.site-nav a[lang="en"]').click();
         
         cy.url().should('eq', `${Cypress.env('host')}/home/`);
