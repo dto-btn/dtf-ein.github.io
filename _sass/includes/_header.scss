@@ -1,13 +1,30 @@
 .site-header {
-  @extend %padding-small;
-  background: $brand-color;
-  border-bottom: 1px solid $border-color;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 
   a {
     color: $header-link-color;
+  }
+
+  .fip-bar {
+    @extend %padding-small;
+    border-bottom: 1px solid $border-color;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: .9em;
+
+    .fip {
+      width: 300px;
+      height: auto;
+    }    
+  }
+
+  .branding {
+    @extend %padding-small;
+    border-bottom: 1px solid $border-color;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;    
+    border-bottom: 1px solid $border-color;
   }
 
   .site-title {    
@@ -25,7 +42,7 @@
     }
   }
 
-  .site-nav {
+  #lang-swap {
     ul {
       position: relative;
       top: -2px;

@@ -1,4 +1,28 @@
 <header class="site-header">
+
+	<div class="fip-bar">
+		<a href="{{ site.data.i18n[page.lang].shared_services_canada_url | default: site.data.i18n.en.shared_services_canada_url }}" aria-label="{{ site.data.i18n[page.lang].shared_services_canada | default: site.data.i18n.en.shared_services_canada }}">
+			<img src="{{ site.baseurl }}/assets/img/ssc-fip-blk-{{ page.lang | default: 'en' }}.svg" class="fip" alt="{{ site.data.i18n[page.lang].shared_services_canada | default: site.data.i18n.en.shared_services_canada }}" >
+		</a>
+		{% if page.hide != true and page.lang %}
+		<section id="lang-swap">
+			<h2 class="inv">{{ site.data.i18n[page.lang].language_swap }}</h2>
+			<ul>
+				{% assign posts = site.posts | where:"ref", page.ref | sort: 'lang' %}
+				{% assign pages = site.pages | where:"ref", page.ref | sort: 'lang' %}
+				{% assign all_content = posts | concat: pages %}
+				{% for content in all_content %}
+					{% if content.lang != page.lang %}
+						<li><a class="page-link" lang="{{ content.lang }}" hreflang="{{ content.lang }}" href="{{ content.url | prepend: site.baseurl }}">{{ site.data.i18n[content.lang].language }}</a></li>
+						{% break %}
+					{% endif %}
+				{% endfor %}  
+			</ul>
+
+		</section>
+		{% endif %}
+	</div>
+
 	<div class="branding">
 		<h1 class="site-title">
 			<a href="{{ site.baseurl }}/{{ site.data.i18n[page.lang].home_url }}">
@@ -11,23 +35,5 @@
 				</span>				
 			</a>
 		</h1>
-	</div>
-	{% if page.hide != true %}
-	<nav class="site-nav">
-
-		<ul>
-			{% assign posts = site.posts | where:"ref", page.ref | sort: 'lang' %}
-			{% assign pages = site.pages | where:"ref", page.ref | sort: 'lang' %}
-			{% assign all_content = posts | concat: pages %}
-			{% for content in all_content %}
-				{% if page.lang and content.lang != page.lang %}
-					<li><a class="page-link" lang="{{ content.lang }}" hreflang="{{ content.lang }}" href="{{ content.url | prepend: site.baseurl }}">{{ site.data.i18n[content.lang].language }}</a></li>
-					{% break %}
-				{% endif %}
-			{% endfor %}  
-		</ul>
-
-	</nav>
-	{% endif %}
-
+	</div>	
 </header>
