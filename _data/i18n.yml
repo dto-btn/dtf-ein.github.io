@@ -3,8 +3,9 @@ en:
   footer_text: >
     <p>Hosted on <a href="https://github.com/dtf-ein/dtf-ein.github.io">GitHub</a>.</p>
     <p><a href="https://github.com/dtf-ein/dtf-ein.github.io/issues">Help us improve</a>.</p>
-  home_url: home
+  home_url: home  
   language: English
+  language_swap: Language swap
   meta_description: The Digital Task Force is a team working in the CIO Office of Shared Services Canada
   meta_title: Digital Task Force
   meta_title_acronym: DTF
@@ -15,8 +16,9 @@ fr:
   footer_text: >
     <p>Hébergé sur <a href="https://github.com/dtf-ein/dtf-ein.github.io">GitHub</a>.</p>
     <p><a href="https://github.com/dtf-ein/dtf-ein.github.io/issues">Aidez-nous à améliorer</a>. </p>
-  home_url: accueil
+  home_url: accueil  
   language: Français
+  language_swap: Sélection de la langue
   meta_description: L’Équipe d’intervention numérique est une équipe qui travaille au Bureau du DPI de Services partagés Canada.
   meta_title: L’Équipe d’intervention numérique
   meta_title_acronym: EIN
