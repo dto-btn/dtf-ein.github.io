@@ -54,7 +54,7 @@ describe('Test the home page', function() {
 
     it('changes language to French and has expected links', function() {
         cy.visit(`${Cypress.env('host')}/home`);
-        cy.get('.site-nav a[lang="fr"]').click();
+        cy.get('#lang-swap a[lang="fr"]').click();
 
         cy.injectAxe();
         cy.checkA11y();  
@@ -71,7 +71,7 @@ describe('Test the home page', function() {
     
     it('changes language to English from French', function() {
         cy.visit(`${Cypress.env('host')}/accueil`);
-        cy.get('.site-nav a[lang="en"]').click();
+        cy.get('#lang-swap a[lang="en"]').click();
         
         cy.url().should('eq', `${Cypress.env('host')}/home/`);
         cy.get('html').should('have.attr', 'lang').and('eq', 'en');           
