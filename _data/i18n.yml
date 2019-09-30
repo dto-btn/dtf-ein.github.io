@@ -1,8 +1,7 @@
 en:
   continue_reading: Continue reading
-  footer_text: >
-    <p>Hosted on <a href="https://github.com/dtf-ein/dtf-ein.github.io">GitHub</a>.</p>
-    <p><a href="https://github.com/dtf-ein/dtf-ein.github.io/issues">Help us improve</a>.</p>
+  footer_hosted: Hosted on <a href="https://github.com/dtf-ein/dtf-ein.github.io">GitHub</a>.
+  footer_improve: <a href="https://github.com/dtf-ein/dtf-ein.github.io/issues">Help us improve</a>.    
   home_url: home  
   language: English
   language_swap: Language swap
@@ -13,9 +12,8 @@ en:
   shared_services_canada_url: https://www.canada.ca/en/shared-services.html
 fr:
   continue_reading: Continuer à lire
-  footer_text: >
-    <p>Hébergé sur <a href="https://github.com/dtf-ein/dtf-ein.github.io">GitHub</a>.</p>
-    <p><a href="https://github.com/dtf-ein/dtf-ein.github.io/issues">Aidez-nous à améliorer</a>. </p>
+  footer_hosted: Hébergé sur <a href="https://github.com/dtf-ein/dtf-ein.github.io">GitHub</a>.
+  footer_improve: <a href="https://github.com/dtf-ein/dtf-ein.github.io/issues">Aidez-nous à améliorer</a>.
   home_url: accueil  
   language: Français
   language_swap: Sélection de la langue

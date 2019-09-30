@@ -1,16 +1,23 @@
-.site-header {
+@mixin header-bar {
+  @extend %padding-small;  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid $border-color;
+}
 
-  a {
-    color: $header-link-color;
-  }
+.site-header {
+  @include header-bar;
 
   .fip-bar {
-    @extend %padding-small;
-    border-bottom: 1px solid $border-color;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     font-size: .9em;
+    background: #000;
+
+    a,
+    a:hover,
+    a:visited {
+      color: #fff;
+    }
 
     .fip {
       width: 300px;
@@ -19,12 +26,12 @@
   }
 
   .branding {
-    @extend %padding-small;
+    @include header-bar;  
     border-bottom: 1px solid $border-color;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;    
-    border-bottom: 1px solid $border-color;
+    
+    a {
+      color: $header-link-color;
+    }    
   }
 
   .site-title {    

@@ -4,4 +4,5 @@ ref: splash
 lang: en
 permalink: /
 hide: true
+footerFip: true
 ---

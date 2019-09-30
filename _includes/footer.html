@@ -1,14 +1,20 @@
 <footer>
 	{% if page.hide != true and page.lang  %}
 	<div class="site-footer">
-		{{ site.data.i18n[page.lang].footer_text }}
+		<p>{{ site.data.i18n[page.lang].footer_improve }}</p>
 	</div>
 	{% endif %}
 
 	<div class="fip-bar">
-		<a href="{{ site.data.i18n[page.lang].shared_services_canada_url | default: site.data.i18n.en.shared_services_canada_url }}" aria-label="{{ site.data.i18n[page.lang].shared_services_canada | default: site.data.i18n.en.shared_services_canada }}">
-			<img src="{{ site.baseurl }}/assets/img/ssc-fip-wht-{{ page.lang | default: 'en' }}.svg" class="fip" alt="{{ site.data.i18n[page.lang].shared_services_canada | default: site.data.i18n.en.shared_services_canada }}" >
-		</a>
+		<span class="hide-mobile">
+			{% if page.footerFip == true  %}
+				<a href="{{ site.data.i18n[page.lang].shared_services_canada_url | default: site.data.i18n.en.shared_services_canada_url }}" aria-label="{{ site.data.i18n[page.lang].shared_services_canada | default: site.data.i18n.en.shared_services_canada }}">
+					<img src="{{ site.baseurl }}/assets/img/ssc-fip-wht-{{ page.lang | default: 'en' }}.svg" class="fip" alt="{{ site.data.i18n[page.lang].shared_services_canada | default: site.data.i18n.en.shared_services_canada }}" >
+				</a>
+			{% else %}
+				{{ site.data.i18n[page.lang].footer_hosted | default: site.data.i18n.en.footer_hosted  }}
+			{% endif %}
+		</span>
 		<a href="https://canada.ca/{{ page.lang }}" aria-label="Canada.ca">
 			<img src="{{ site.baseurl }}/assets/img/wordmark.svg" class="wordmark" alt="Canada.ca" >
 		</a>	
