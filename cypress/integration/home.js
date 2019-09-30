@@ -8,10 +8,9 @@ describe('Test the home page', function() {
 
         cy.get('title').should('contain', 'Home - Digital Task Force');
         cy.get('.call-out .button').should('have.attr', 'href').and('eq', 'https://github.com/orgs/dtf-ein/projects/1');
-        cy.get('.site-footer p:nth-child(1) a').should('have.attr', 'href').and('eq', 'https://github.com/dtf-ein/dtf-ein.github.io'); 
-        cy.get('.site-footer p:nth-child(2) a').should('have.attr', 'href').and('eq', 'https://github.com/dtf-ein/dtf-ein.github.io/issues');
-        cy.get('.fip-bar a:nth-child(1)').should('have.attr', 'href').and('eq', 'https://www.canada.ca/en/shared-services.html');
-        cy.get('.fip-bar a:nth-child(2)').should('have.attr', 'href').and('eq', 'https://canada.ca/en');           
+        cy.get('.site-footer a').should('have.attr', 'href').and('eq', 'https://github.com/dtf-ein/dtf-ein.github.io/issues');
+        cy.get('footer .fip-bar a:nth-child(1)').should('have.attr', 'href').and('eq', 'https://github.com/dtf-ein/dtf-ein.github.io');
+        cy.get('footer .fip-bar a:nth-child(2)').should('have.attr', 'href').and('eq', 'https://canada.ca/en');           
     });
 
     it('matches the reference snapshot on desktop in English', () => {
@@ -63,10 +62,9 @@ describe('Test the home page', function() {
         cy.get('html').should('have.attr', 'lang').and('eq', 'fr');
         cy.get('title').should('contain', 'Accueil - L’Équipe d’intervention numérique');
         cy.get('.call-out .button').should('have.attr', 'href').and('eq', 'https://github.com/orgs/dtf-ein/projects/1');
-        cy.get('.site-footer p:nth-child(1) a').should('have.attr', 'href').and('eq', 'https://github.com/dtf-ein/dtf-ein.github.io'); 
-        cy.get('.site-footer p:nth-child(2) a').should('have.attr', 'href').and('eq', 'https://github.com/dtf-ein/dtf-ein.github.io/issues');
-        cy.get('.fip-bar a:nth-child(1)').should('have.attr', 'href').and('eq', 'https://www.canada.ca/fr/services-partages.html');
-        cy.get('.fip-bar a:nth-child(2)').should('have.attr', 'href').and('eq', 'https://canada.ca/fr');              
+        cy.get('.site-footer a').should('have.attr', 'href').and('eq', 'https://github.com/dtf-ein/dtf-ein.github.io/issues');
+        cy.get('footer .fip-bar a:nth-child(1)').should('have.attr', 'href').and('eq', 'https://github.com/dtf-ein/dtf-ein.github.io');
+        cy.get('footer .fip-bar a:nth-child(2)').should('have.attr', 'href').and('eq', 'https://canada.ca/fr');              
     });
     
     it('changes language to English from French', function() {
