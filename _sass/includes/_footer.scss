@@ -6,12 +6,6 @@ footer {
     p {
       margin: 0;
     }
-
-    a,
-    a:hover,
-    a:visited {
-      color: #fff;
-    }
   }
 
 
@@ -21,6 +15,13 @@ footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    color: #fff;
+
+    a,
+    a:hover,
+    a:visited {
+      color: #fff;
+    }
 
     img {
       height: auto;
@@ -30,9 +31,6 @@ footer {
       }
       &.wordmark {
         width: 130px;
-        @media (max-width: 576px) {
-          display: none;
-        }
       }
     }
   }
