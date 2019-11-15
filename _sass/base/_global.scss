@@ -111,6 +111,12 @@ a {
   color: $link-color;
   text-decoration: none;
 }
+main {
+  a {
+    text-decoration: underline;
+  }
+}
+
 .nav {
   list-style: none;
   margin: 0;
