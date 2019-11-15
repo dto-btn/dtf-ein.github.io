@@ -1,4 +1,5 @@
 en:
+  close: Close
   continue_reading: Continue reading
   footer_hosted: <a href="https://github.com/dtf-ein/dtf-ein.github.io">Hosted on GitHub</a>.
   footer_improve: <a href="https://github.com/dtf-ein/dtf-ein.github.io/issues">Help us improve</a>.    
@@ -11,6 +12,7 @@ en:
   shared_services_canada: Shared Services Canada
   shared_services_canada_url: https://www.canada.ca/en/shared-services.html
 fr:
+  close: Fermer
   continue_reading: Continuer à lire
   footer_hosted: <a href="https://github.com/dtf-ein/dtf-ein.github.io">Hébergé sur GitHub</a>.
   footer_improve: <a href="https://github.com/dtf-ein/dtf-ein.github.io/issues">Aidez-nous à améliorer</a>.

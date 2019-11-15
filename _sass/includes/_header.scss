@@ -50,6 +50,58 @@
     }
   }
 
+  #main-menu {
+    position: fixed;
+    top: 0;
+    right: -30%;
+    height: 100%;
+    z-index: 10;
+
+    width: 30%;
+    padding: 4em 2em; 
+    background: #fff;
+    border-left: 1px solid $border-color;
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+
+    transition: right .5s;
+
+    &.active {
+      right: 0;
+    }
+
+    ul {
+      list-style: none;
+      a {
+        display: block;
+        padding: .5em 0;
+        border-top:  1px solid $border-color;
+      }
+    }
+
+    .close {
+      position: absolute;
+      top: 1.5em;
+      right: 2em;
+      border: 0;
+      background: 0;
+      width: 20px;
+      height: 20px;
+    }
+
+    @media (max-width: 1000px) {
+      & {
+        right: -50%;
+        width: 50%;
+      }
+    } 
+    @media (max-width: 576px) {
+      & {
+        right: -80%;
+        width: 80%;
+      }
+    }    
+  }
+
   #lang-swap {
     ul {
       position: relative;

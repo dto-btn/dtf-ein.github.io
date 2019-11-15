@@ -7,13 +7,13 @@
 		{% if page.hide != true and page.lang %}
 		<section id="lang-swap">
 			<h2 class="inv">{{ site.data.i18n[page.lang].language_swap }}</h2>
-			<ul>
+			<ul role="menu">
 				{% assign posts = site.posts | where:"ref", page.ref | sort: 'lang' %}
 				{% assign pages = site.pages | where:"ref", page.ref | sort: 'lang' %}
 				{% assign all_content = posts | concat: pages %}
 				{% for content in all_content %}
 					{% if content.lang != page.lang %}
-						<li><a class="page-link" lang="{{ content.lang }}" hreflang="{{ content.lang }}" href="{{ content.url | prepend: site.baseurl }}">{{ site.data.i18n[content.lang].language }}</a></li>
+						<li id="lang-swap-link" role="none"><a role="menuitem" class="page-link" lang="{{ content.lang }}" hreflang="{{ content.lang }}" href="{{ content.url | prepend: site.baseurl }}">{{ site.data.i18n[content.lang].language }}</a></li>
 						{% break %}
 					{% endif %}
 				{% endfor %}  
@@ -35,5 +35,21 @@
 				</span>				
 			</a>
 		</h1>
+		<div>
+			<button type="button" class="link" id="main-menu-trigger" aria-haspopup="true" aria-controls="main-menu" aria-expanded="false">Menu</button>
+			<nav id="main-menu" aria-labelledby="main-menu-trigger">
+				<ul role="menu">
+					{% for item in site.data.nav.pages %}
+						{% assign item_page = site.pages | where:"ref",item.ref | where:"lang",page.lang | first %}
+						{% if item_page.title %}
+							<li role="none"><a role="menuitem" href="{{ item_page.url | relative_url }}">{{ item_page.title }}</a></li>
+						{% endif %}
+					{% endfor %}
+				</ul>
+				<button type="button" class="close">
+					<img src="{{ site.baseurl }}/assets/img/close.svg" alt="{{ site.data.i18n[page.lang].close | default: site.data.i18n.en.close }}" >
+				</button>
+			</nav>
+		</div>		
 	</div>	
 </header>

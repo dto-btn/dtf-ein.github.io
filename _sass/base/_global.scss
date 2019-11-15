@@ -107,9 +107,11 @@ hr {
   border-bottom: 1px solid #fff;
   margin: 1em 0;
 }
-a {
+a, .link {
   color: $link-color;
   text-decoration: none;
+  border: 0;
+  background: 0;
 }
 main {
   a {

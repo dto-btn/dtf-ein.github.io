@@ -20,7 +20,7 @@ jekyll serve --livereload
 
 # Add a new page
 1. Create an English and French version of the page in the respective [`./_pages/en`](https://github.com/dtf-ein/dtf-ein.github.io/tree/master/_pages/en) and [`./_pages/fr`](https://github.com/dtf-ein/dtf-ein.github.io/tree/master/_pages/fr) directory.
-1. Use [Jekyll front matter](https://jekyllrb.com/docs/front-matter/) to link the pages together:
+2. Use [Jekyll front matter](https://jekyllrb.com/docs/front-matter/) to link the pages together:
 ```yaml
 # English page
 ---
@@ -39,6 +39,13 @@ lang: fr
 ref: contact
 permalink: /contactez-nous/
 ---
+```
+3. Add the page's `ref` to [`_data/nav.yml`](https://github.com/dtf-ein/dtf-ein.github.io/blob/master/_data/nav.yml):
+```yaml
+pages:
+- ref: home
+- ref: digital-hour
+- ref: contact
 ```
 
 # Add translated strings
