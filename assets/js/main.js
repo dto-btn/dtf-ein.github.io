@@ -93,13 +93,23 @@ var menu = {
 // Create the menu
 menu.init();
 
+
 // Update the header menu based on window width
 window.addEventListener('resize', function() {
-    const langSwapElem = document.querySelector('#lang-swap-link');
-    if(langSwapElem){
-        const targetElem = window.innerWidth > 576 ? '#lang-swap' : '#main-menu ul';
-        document.querySelector(targetElem).appendChild(langSwapElem);
-    } 
+    var langSwapLink = document.querySelector('#lang-swap .lang-swap-link');
+    var langSwapMenuLink = document.querySelector('#main-menu .lang-swap-link');
+
+    if(langSwapLink){
+        if(window.innerWidth < 576){
+            if(!langSwapMenuLink){
+                var clone = langSwapLink.cloneNode(true);            
+                clone.querySelector('a').setAttribute('role', 'menuitem');
+                document.querySelector('#main-menu ul').appendChild(clone);
+            }
+        } else if(langSwapMenuLink) {
+            document.querySelector('#main-menu ul').removeChild(langSwapMenuLink);
+        }
+    }
 });
 
 window.dispatchEvent(new Event('resize'));

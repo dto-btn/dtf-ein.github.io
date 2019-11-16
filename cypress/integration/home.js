@@ -74,6 +74,6 @@ describe('Test the home page', function() {
         cy.url().should('eq', `${Cypress.env('host')}/home/`);
         cy.get('html').should('have.attr', 'lang').and('eq', 'en');           
         cy.get('title').should('contain', 'Home - Digital Task Force');
-    }); 
+    });    
  
 });

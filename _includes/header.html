@@ -5,20 +5,19 @@
 			<img src="{{ site.baseurl }}/assets/img/ssc-fip-wht-{{ page.lang | default: 'en' }}.svg" class="fip" alt="{{ site.data.i18n[page.lang].shared_services_canada | default: site.data.i18n.en.shared_services_canada }}" >
 		</a>
 		{% if page.hide != true and page.lang %}
-		<section id="lang-swap">
+		<section id="lang-swap" class="hide-mobile">
 			<h2 class="inv">{{ site.data.i18n[page.lang].language_swap }}</h2>
-			<ul role="menu">
+			<ul>
 				{% assign posts = site.posts | where:"ref", page.ref | sort: 'lang' %}
 				{% assign pages = site.pages | where:"ref", page.ref | sort: 'lang' %}
 				{% assign all_content = posts | concat: pages %}
 				{% for content in all_content %}
-					{% if content.lang != page.lang %}
-						<li id="lang-swap-link" role="none"><a role="menuitem" class="page-link" lang="{{ content.lang }}" hreflang="{{ content.lang }}" href="{{ content.url | prepend: site.baseurl }}">{{ site.data.i18n[content.lang].language }}</a></li>
+					{% if content.lang != page.lang %}						
+						<li class="lang-swap-link"><a class="page-link" lang="{{ content.lang }}" hreflang="{{ content.lang }}" href="{{ content.url | prepend: site.baseurl }}">{{ site.data.i18n[content.lang].language }}</a></li>
 						{% break %}
 					{% endif %}
 				{% endfor %}  
 			</ul>
-
 		</section>
 		{% endif %}
 	</div>
@@ -38,6 +37,7 @@
 		<div>
 			<button type="button" class="link" id="main-menu-trigger" aria-haspopup="true" aria-controls="main-menu" aria-expanded="false">Menu</button>
 			<nav id="main-menu" aria-labelledby="main-menu-trigger">
+				<h2 class="inv">Menu</h2>
 				<ul role="menu">
 					{% for item in site.data.nav.pages %}
 						{% assign item_page = site.pages | where:"ref",item.ref | where:"lang",page.lang | first %}
